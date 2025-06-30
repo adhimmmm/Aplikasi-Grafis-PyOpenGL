@@ -1,0 +1,347 @@
+/* Gaya Umum untuk seluruh halaman */
+body {
+    font-family: 'Roboto', sans-serif;
+    /* Menggunakan font Roboto dari Google Fonts */
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    /* Warna latar belakang halaman yang lembut */
+    color: #333;
+    /* Warna teks default */
+    line-height: 1.6;
+    /* Jarak antar baris untuk keterbacaan */
+}
+
+/* Kontainer utama yang menahan semua bagian kontrol */
+.container {
+    max-width: 900px;
+    /* Lebar maksimum kontainer */
+    margin: 30px auto;
+    /* Margin atas/bawah 30px, auto untuk di tengah */
+    padding: 20px;
+    background-color: #ffffff;
+    /* Latar belakang putih */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Efek bayangan elegan */
+    border-radius: 10px;
+    /* Sudut membulat pada kontainer */
+}
+
+/* Gaya untuk bagian header halaman */
+header {
+    background-color: #4CAF50;
+    /* Hijau cerah sebagai warna identitas proyek */
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    /* Sudut membulat hanya di bagian atas */
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    /* Ukuran font besar untuk judul utama */
+    font-weight: 700;
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+    /* Sedikit transparan untuk teks subtitle */
+}
+
+/* Gaya untuk setiap bagian kontrol individual */
+.control-section {
+    background-color: #fdfdfd;
+    /* Latar belakang sedikit off-white */
+    border: 1px solid #e0e0e0;
+    /* Garis batas tipis */
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    /* Efek transisi halus saat di-hover */
+}
+
+.control-section:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    /* Bayangan saat di-hover */
+}
+
+.control-section h2 {
+    color: #007bff;
+    /* Biru cerah untuk judul setiap bagian */
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e9ecef;
+    /* Garis bawah untuk judul */
+    padding-bottom: 10px;
+    font-size: 1.8em;
+}
+
+/* Grup kontrol (label dan input/slider) */
+.control-group {
+    margin-bottom: 15px;
+    display: flex;
+    /* Menggunakan Flexbox untuk tata letak horizontal */
+    align-items: center;
+    /* Menyelaraskan item secara vertikal */
+    gap: 10px;
+    /* Jarak antar elemen dalam grup */
+}
+
+.control-group label {
+    flex: 1;
+    /* Memberikan label ruang yang fleksibel */
+    font-weight: bold;
+    color: #555;
+}
+
+/* Styling untuk slider (input type="range") */
+.control-group input[type="range"] {
+    flex: 3;
+    /* Memberikan slider ruang yang lebih besar */
+    width: 100%;
+    -webkit-appearance: none;
+    /* Hapus gaya default browser (Chrome/Safari) */
+    appearance: none;
+    height: 8px;
+    background: #d3d3d3;
+    /* Warna trek slider */
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+    border-radius: 5px;
+}
+
+/* Styling untuk thumb (tombol geser) slider */
+.control-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    /* Bentuk lingkaran */
+    background: #007bff;
+    /* Warna thumb slider */
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.control-group input[type="range"]::-moz-range-thumb {
+    /* Untuk Firefox */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling untuk pemilih warna */
+.control-group input[type="color"] {
+    width: 50px;
+    /* Ukuran yang lebih baik untuk pemilih warna */
+    height: 30px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* Styling untuk menampilkan nilai slider */
+.control-group span {
+    font-weight: bold;
+    color: #007bff;
+    min-width: 30px;
+    /* Pastikan ruang yang cukup untuk nilai 3 digit */
+    text-align: right;
+}
+
+/* Gaya dasar untuk semua tombol aksi */
+.action-button {
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Efek transisi tombol saat interaksi */
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* Warna untuk tombol primer (misal: terapkan transformasi) */
+.action-button.primary {
+    background-color: #007bff;
+    /* Biru utama */
+    color: white;
+}
+
+.action-button.primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    /* Efek angkat saat di-hover */
+}
+
+/* Warna untuk tombol sekunder (misal: mode gambar) */
+.action-button.secondary {
+    background-color: #6c757d;
+    /* Abu-abu */
+    color: white;
+}
+
+.action-button.secondary:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+/* Warna untuk tombol informasi (misal: atur jendela clipping) */
+.action-button.info {
+    background-color: #17a2b8;
+    /* Cyan */
+}
+
+.action-button.info:hover {
+    background-color: #138496;
+}
+
+/* Warna untuk tombol sukses (misal: aktifkan clipping) */
+.action-button.success {
+    background-color: #28a745;
+    /* Hijau sukses */
+}
+
+.action-button.success:hover {
+    background-color: #218838;
+}
+
+/* Warna untuk tombol bahaya (misal: hapus semua objek, nonaktifkan clipping) */
+.action-button.danger {
+    background-color: #dc3545;
+    /* Merah bahaya */
+}
+
+.action-button.danger:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+/* --- Tambahan untuk Efek Tombol Aktif --- */
+.action-button.active-tool-button {
+    background-color: #ffc107;
+    /* Warna kuning/oranye untuk menunjukkan aktif */
+    color: #333;
+    /* Warna teks yang kontras */
+    border: 2px solid #e0a800;
+    /* Border yang menonjol */
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+    /* Bayangan cahaya */
+    transform: translateY(-1px);
+    /* Sedikit efek terangkat */
+}
+
+/* Pastikan efek hover tetap bekerja atau sesuaikan jika perlu */
+.action-button.active-tool-button:hover {
+    background-color: #e0a800;
+    /* Warna lebih gelap saat hover */
+    box-shadow: 0 0 12px rgba(255, 193, 7, 0.7);
+}
+
+
+/* Garis pemisah horizontal */
+.separator {
+    border: 0;
+    border-top: 1px dashed #e0e0e0;
+    /* Garis putus-putus */
+    margin: 20px 0;
+}
+
+/* Grup tombol untuk tata letak yang rapi */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    /* Mengizinkan tombol untuk "wrap" ke baris berikutnya jika tidak muat */
+    gap: 10px;
+    /* Jarak antar tombol */
+    margin-bottom: 15px;
+}
+
+.button-group .action-button {
+    flex: 1 1 auto;
+    /* Mengizinkan tombol untuk tumbuh dan menyusut, dan memiliki lebar otomatis */
+    min-width: 120px;
+    /* Lebar minimum untuk tombol agar tidak terlalu kecil */
+}
+
+/* Teks instruksi kecil */
+.instruction {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
+    padding-left: 5px;
+    border-left: 3px solid #eee;
+    /* Garis di kiri untuk menonjolkan instruksi */
+    font-weight: 400;
+    /* Normal */
+}
+
+.instruction strong {
+    /* Untuk membuat teks instruksi yang penting menjadi bold */
+    font-weight: 700;
+    color: #333;
+}
+
+/* Bagian Status dan Log */
+.status-section {
+    background-color: #e6f7ff;
+    /* Latar belakang biru muda untuk bagian status */
+    border-color: #91d5ff;
+}
+
+.status-section h2 {
+    color: #1890ff;
+}
+
+.status-box {
+    background-color: #f0f8ff;
+    border: 1px solid #d9efff;
+    padding: 15px;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    /* Font monospace untuk log agar lebih mudah dibaca */
+    font-size: 0.95em;
+    color: #364d79;
+    white-space: pre-wrap;
+    /* Mempertahankan spasi putih dan baris baru dalam teks */
+    word-wrap: break-word;
+    /* Mencegah teks terlalu panjang dan overflow */
+}
+
+/* Gaya untuk pesan status sukses */
+.status-box.success {
+    background-color: #e6ffed;
+    border-color: #b7eb8f;
+    color: #389e0d;
+}
+
+/* Gaya untuk pesan status error */
+.status-box.error {
+    background-color: #fff0f6;
+    border-color: #ffadd2;
+    color: #eb2f96;
+}
+
+/* Footer halaman */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #777;
+    border-top: 1px solid #e0e0e0;
+}
