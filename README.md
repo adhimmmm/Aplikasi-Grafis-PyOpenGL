@@ -1,262 +1,196 @@
-Proyek Grafika Komputer Interaktif dengan PyOpenGL dan Web Control Panel
+# ✨ Proyek Grafika Komputer Interaktif: PyOpenGL & Web Control Panel ✨
 
+[![Python Version](https://img.shields.io/badge/Python-3.x%2B-blue.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Framework](https://img.shields.io/badge/Framework-Flask-green.svg?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+[![Graphics API](https://img.shields.io/badge/Graphics%20API-PyOpenGL-orange.svg?style=for-the-badge&logo=opengl&logoColor=white)](http://pyopengl.sourceforge.net/)
+[![UI/UX](https://img.shields.io/badge/UI%2FUX-HTML%2FCSS%2FJS-red.svg?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![License](https://img.shields.io/badge/License-MIT-lightgrey.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
+---
 
- (Opsional: jika Anda ingin menyertakan lisensi)
+Selamat datang di Proyek Grafika Komputer Interaktif! Aplikasi inovatif ini membawa konsep-konsep grafika 2D ke level selanjutnya dengan kombinasi PyOpenGL yang kuat dan panel kontrol berbasis web yang *cantik* serta intuitif. Dibuat khusus untuk memenuhi persyaratan tugas besar mata kuliah Grafika Komputer, proyek ini adalah bukti nyata sinergi antara aplikasi desktop grafis berkinerja tinggi dan antarmuka pengguna web modern. 🚀
 
-Selamat datang di Proyek Grafika Komputer Interaktif! Aplikasi ini adalah implementasi canggih dari konsep-konsep grafika 2D menggunakan PyOpenGL, dilengkapi dengan panel kontrol berbasis web yang intuitif dan responsif. Dirancang untuk memenuhi persyaratan tugas besar mata kuliah Grafika Komputer, proyek ini menunjukkan sinergi antara aplikasi desktop grafis berkinerja tinggi dan antarmuka pengguna modern berbasis web.
+## 📖 Daftar Isi
 
-Daftar Isi
-Gambaran Umum Proyek
+* [🌟 Gambaran Umum Proyek](#-gambaran-umum-proyek)
+* [🚀 Fitur Unggulan](#-fitur-unggulan)
+* [🛠️ Teknologi yang Digunakan](#-teknologi-yang-digunakan)
+* [📂 Struktur Proyek](#-struktur-proyek)
+* [🖥️ Persyaratan Sistem](#-persyaratan-sistem)
+* [⬇️ Panduan Instalasi](#-panduan-instalasi)
+* [▶️ Cara Menjalankan Program](#-cara-menjalankan-program)
+* [💡 Panduan Penggunaan](#-panduan-penggunaan)
+* [📈 Potensi Pengembangan Lanjutan](#-potensi-pengembangan-lanjutan)
 
-Fitur Utama
+---
 
-Teknologi yang Digunakan
+## 🌟 Gambaran Umum Proyek
 
-Struktur Proyek
+Proyek ini mendefinisikan ulang interaksi dalam aplikasi grafika komputer. Alih-alih antarmuka tradisional, kami memisahkan rendering grafis berkinerja tinggi (dihandle oleh PyOpenGL sebagai aplikasi desktop native) dari pengalaman pengguna (disajikan melalui panel kontrol berbasis web yang ramah pengguna). Komunikasi real-time antara kedua dunia ini diwujudkan melalui server Python Flask yang efisien dan komunikasi socket yang cepat.
 
-Persyaratan Sistem
+Pendekatan arsitektur *hybrid* ini tidak hanya memenuhi standar akademis tetapi juga membuka pintu bagi pengalaman pengguna yang lebih fleksibel, modern, dan demonstrasi konsep grafika yang lebih interaktif. 🌐
 
-Panduan Instalasi
+## 🚀 Fitur Unggulan
 
-Cara Menjalankan Program
+### 🎨 A. Objek 2D Dasar & Pengaturan Visual
 
-Panduan Penggunaan
+* **Menggambar Primitif:** Buat Titik, Garis, Segitiga, **Elips**, dan **Persegi** dengan mudah melalui klik mouse langsung di jendela grafis.
+* **Kustomisasi Visual:** Atur **Warna** objek (RGB) dan **Ketebalan Garis** (atau ukuran titik) menggunakan slider dan pemilih warna yang responsif di panel web. Perubahan dapat diterapkan pada objek baru atau objek yang sedang terpilih!
+* **Input Mouse:** Semua operasi gambar dan interaksi dikendalikan secara intuitif melalui klik mouse.
 
-Penyempurnaan Lanjutan (Potensi Pengembangan)
+### 🔄 B. Transformasi Geometris Interaktif
 
-Kontribusi
+* **Translasi (Pergeseran):** Pindahkan objek terpilih di sepanjang sumbu X dan Y menggunakan slider di panel web.
+* **Rotasi:** Putar objek terpilih menggunakan slider sudut rotasi.
+* **Skala (Perubahan Ukuran):** Sesuaikan ukuran objek terpilih secara independen di sumbu X dan Y menggunakan slider skala.
+* **Reset Cepat:** Satu tombol untuk mengembalikan semua transformasi objek yang terpilih ke kondisi awalnya (posisi asli, rotasi 0, skala 100%).
 
-Lisensi
+### ✂️ C. Windowing & Clipping Canggih
 
-Kontak
+* **Definisi Jendela Clipping:** Tentukan area tampilan aktif dengan dua klik mouse di jendela OpenGL. Batas jendela terlihat jelas dengan *outline* cyan.
+* **Algoritma Cerdas:**
+    * **Cohen-Sutherland:** Digunakan untuk memotong garis dan segmen elips.
+    * **Sutherland-Hodgman:** Digunakan untuk memotong poligon (segitiga dan persegi), memastikan hanya bagian yang terlihat yang dirender.
+* **Kontrol Toggle:** Aktifkan atau nonaktifkan fitur clipping dengan mudah dari panel web.
+* **Geser Jendela Clipping:** Pindahkan jendela clipping secara halus dengan *drag-and-drop* mouse, memberikan kontrol dinamis atas area pandang.
 
-Gambaran Umum Proyek
-Proyek ini adalah aplikasi grafika komputer yang memungkinkan pengguna untuk membuat, memanipulasi, dan melihat objek 2D secara interaktif. Berbeda dari aplikasi grafis tradisional, proyek ini memisahkan logika rendering grafis (yang dihandle oleh PyOpenGL sebagai aplikasi desktop) dari antarmuka pengguna (yang disajikan melalui browser web). Komunikasi antara keduanya difasilitasi oleh server Python Flask dan komunikasi socket real-time.
+### 🔗 D. Integrasi & Interaktivitas Seamless
 
-Pendekatan ini tidak hanya menunjukkan pemahaman mendalam tentang pipeline grafika, tetapi juga kemampuan untuk mengintegrasikan teknologi desktop dan web untuk pengalaman pengguna yang lebih fleksibel dan modern.
+* **Pemilihan Objek Intuitif:** Klik objek di jendela grafis (dalam mode seleksi) untuk memilihnya. Objek yang terpilih akan ditandai dengan **highlight kuning** yang jelas.
+* **Panel Kontrol Web Modern:** Antarmuka pengguna yang *user-friendly* dan responsif, dirancang dengan HTML, CSS, dan JavaScript, memungkinkan Anda mengendalikan semua fitur dengan mudah dari browser Anda.
+* **Komunikasi Real-time:** Berkat arsitektur Flask dan socket, setiap penyesuaian di panel web langsung tercermin di jendela grafis PyOpenGL Anda, menciptakan pengalaman yang *live* dan interaktif.
 
-Fitur Utama
-A. Objek 2D Dasar
-Gambar Titik: Tambahkan titik dengan klik mouse.
+---
 
-Gambar Garis: Buat segmen garis dengan dua klik mouse.
+## 🛠️ Teknologi yang Digunakan
 
-Gambar Segitiga: Bentuk segitiga dengan tiga klik mouse.
+* **Python 3.x:** Tulang punggung proyek.
+    * `PyOpenGL`: Jembatan ke dunia grafika OpenGL.
+    * `Flask`: Micro-framework web ringan untuk API dan panel kontrol.
+    * `Flask-Cors`: Memastikan komunikasi web lintas-origin berjalan lancar.
+    * `Pygame` / `FreeGLUT`: Digunakan oleh PyOpenGL untuk manajemen jendela dan penanganan event dasar.
+* **HTML5:** Struktur dasar antarmuka pengguna web.
+* **CSS3:** Styling modern untuk panel kontrol web yang estetis.
+* **JavaScript:** Memberikan interaktivitas dinamis di sisi klien (browser).
 
-Gambar Elips: Gambar elips terisi (saat clipping nonaktif) atau outline (saat clipping aktif) dengan dua klik (pusat dan titik radius).
+## 📂 Struktur Proyek
 
-Gambar Persegi: Buat persegi terisi (saat clipping nonaktif) atau outline (saat clipping aktif) dengan dua klik (sudut berlawanan).
+Organisasi kode yang bersih dan modular untuk navigasi yang mudah:
 
-Input Mouse Interaktif: Semua objek digambar dan dikelola melalui interaksi klik mouse langsung pada jendela OpenGL.
-
-B. Pengaturan Warna & Ketebalan
-Pilihan Warna RGB: Sesuaikan warna objek yang akan digambar atau warna objek yang sedang terpilih melalui pemilih warna di panel web.
-
-Pilihan Ketebalan Garis/Ukuran Titik: Atur ketebalan garis atau ukuran titik menggunakan slider. Perubahan dapat diterapkan pada objek baru atau objek yang sedang terpilih.
-
-C. Transformasi Geometris Interaktif
-Translasi (Pergeseran): Geser objek yang terpilih di sepanjang sumbu X dan Y menggunakan slider di panel web.
-
-Rotasi: Putar objek yang terpilih menggunakan slider sudut rotasi.
-
-Skala (Perubahan Ukuran): Ubah ukuran objek yang terpilih di sepanjang sumbu X dan Y menggunakan slider skala.
-
-Reset Transformasi: Tombol praktis untuk mengembalikan semua transformasi (translasi, rotasi, skala) objek yang terpilih ke kondisi awalnya.
-
-D. Windowing & Clipping
-Definisi Jendela Clipping: Tentukan area persegi panjang aktif untuk clipping dengan dua klik mouse pada jendela OpenGL. Batas jendela ditampilkan secara visual (outline cyan).
-
-Algoritma Clipping Garis (Cohen-Sutherland): Potong garis dan segmen elips yang melampaui batas jendela clipping.
-
-Algoritma Clipping Poligon (Sutherland-Hodgman): Potong segitiga dan persegi yang melampaui batas jendela clipping, menghasilkan poligon baru yang sesuai.
-
-Aktifkan/Nonaktifkan Clipping: Kontrol on/off untuk fungsionalitas clipping dari panel web.
-
-Geser Jendela Clipping: Geser jendela clipping secara halus dengan fitur drag-and-drop mouse langsung di jendela OpenGL (saat clipping aktif dan mode seleksi).
-
-E. Integrasi & Interaktivitas Lanjutan
-Pemilihan Objek: Pilih objek yang sudah ada dengan mengklik di jendela OpenGL (saat mode "Seleksi/Nonaktif" aktif). Objek yang terpilih akan ditandai dengan highlight kuning.
-
-Panel Kontrol Berbasis Web: Antarmuka pengguna yang modern dan responsif dibangun dengan HTML, CSS, dan JavaScript, memungkinkan kontrol penuh atas aplikasi grafis.
-
-Komunikasi Real-time: Penggunaan Flask sebagai backend web dan komunikasi socket untuk interaksi instan antara panel web dan jendela grafis PyOpenGL.
-
-Teknologi yang Digunakan
-Python 3.x: Bahasa pemrograman utama.
-
-PyOpenGL: Binding Python untuk OpenGL, digunakan untuk rendering grafis 2D.
-
-Flask: Micro-framework web Python, digunakan sebagai backend untuk melayani panel kontrol web dan API komunikasi.
-
-Flask-Cors: Ekstensi Flask untuk menangani Cross-Origin Resource Sharing.
-
-Pygame / FreeGLUT: Digunakan oleh PyOpenGL untuk manajemen jendela dan penanganan event dasar.
-
-HTML5: Struktur dasar untuk antarmuka pengguna web.
-
-CSS3: Styling untuk panel kontrol web yang menarik dan responsif.
-
-JavaScript: Logika interaktif di sisi klien (browser) untuk panel kontrol.
-
-Struktur Proyek
 my_graphics_project/
-├── main.py                 # Kode Python utama (PyOpenGL app + Flask backend)
-└── static/                 # Folder untuk aset web (HTML, CSS, JS)
-    ├── index.html          # Halaman panel kontrol web
-    ├── style.css           # Styling untuk panel kontrol
-    └── script.js           # Logika interaktif panel kontrol
-Persyaratan Sistem
-Sistem Operasi: Windows 10/11, macOS, atau Linux
 
-Python 3.x terinstal
+├── main.py                 # 🐍 Logika inti aplikasi (PyOpenGL + Flask backend)
+
+└── static/                 # 🌐 Folder untuk aset web statis (HTML, CSS, JS)
+
+  > ├── index.html          # Halaman utama panel kontrol web
+ 
+  > ├── style.css           # Styling khusus untuk panel kontrol
+ 
+  > └── script.js           # Logika interaktif sisi klien untuk panel kontrol
+
+
+## 🖥️ Persyaratan Sistem
+
+Untuk menjalankan aplikasi ini dengan lancar, pastikan Anda memiliki:
+
+* **Sistem Operasi:** Windows 10/11, macOS, atau distribusi Linux yang kompatibel.
+* **Python:** Python 3.x terinstal (disarankan versi terbaru untuk performa dan keamanan).
+* **Koneksi Internet:** Diperlukan untuk mengunduh dependensi awal.
+* **Browser Web Modern:** Google Chrome, Mozilla Firefox, Microsoft Edge, dll., untuk mengakses panel kontrol.
+
+## ⬇️ Panduan Instalasi
+
+Ikuti langkah-langkah mudah ini untuk menyiapkan dan menjalankan proyek di lingkungan lokal Anda:
+
+1.  **Unduh atau Kloning Repositori:**
+    ```bash
+    git clone [https://github.com/USERNAME_ANDA/NAMA_REPO_ANDA.git](https://github.com/USERNAME_ANDA/NAMA_REPO_ANDA.git) # Ganti dengan URL repo Anda
+    cd NAMA_REPO_ANDA # Atau nama folder jika Anda mengunduh ZIP
+    ```
+    *(Jika Anda mengunduh file ZIP, pastikan struktur folder `my_graphics_project/main.py` dan `my_graphics_project/static/` sudah benar.)*
+
+2.  **Instal Dependensi Python:**
+    Buka Terminal atau Command Prompt Anda. **Pastikan `python` dan `pip` dikenali di PATH sistem Anda.** (Jika tidak, Anda mungkin perlu menambahkan Python ke PATH secara manual atau menggunakan `python -m pip install...`).
+
+    Navigasikan ke direktori proyek Anda (`my_graphics_project`):
+    ```bash
+    cd path/to/my_graphics_project
+    ```
+    Jalankan perintah instalasi dependensi:
+    ```bash
+    pip install pygame PyOpenGL PyOpenGL_accelerate Flask Flask-Cors
+    ```
+    *(Jika `pip` tidak dikenali, coba `python -m pip install ...` atau `py -m pip install ...`)*
+
+## ▶️ Cara Menjalankan Program
+
+Setelah instalasi selesai, meluncurkan aplikasi sangat sederhana:
+
+1.  **Buka Terminal/Command Prompt:**
+    * Pastikan Anda berada di direktori proyek (`my_graphics_project`).
+
+2.  **Jalankan Aplikasi Python:**
+    ```bash
+    python main.py
+    ```
+    * Aplikasi ini akan memulai **dua komponen esensial**:
+        1.  Sebuah jendela aplikasi grafis PyOpenGL akan muncul di desktop Anda. Ini adalah kanvas visual Anda.
+        2.  Server web Flask akan mulai berjalan di latar belakang, bertindak sebagai *API gateway* dan penyedia panel kontrol.
+    * Di terminal, Anda akan melihat pesan log yang mengindikasikan server telah dimulai, termasuk alamat URL untuk panel kontrol web:
+        ```
+        INFO - Aplikasi PyOpenGL siap. Silakan buka panel kontrol web Anda di browser.
+        INFO - Memulai Web Control Panel Flask...
+        INFO - Panel Kontrol Web dapat diakses di: [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
+        ```
+    * **Penting:** Biarkan terminal ini tetap terbuka selama Anda menggunakan aplikasi. Menutupnya akan menghentikan kedua bagian program.
+
+3.  **Akses Panel Kontrol Web:**
+    * Buka browser web favorit Anda.
+    * Di bilah alamat (URL bar), ketik alamat yang Anda lihat di log terminal (misalnya: `http://127.0.0.1:5000/`).
+    * Tekan `Enter`.
+
+Selamat! Anda kini siap untuk *berinteraksi* dengan grafika 2D Anda secara dinamis! 🎉
+
+## 💡 Panduan Penggunaan
+
+Panel kontrol web dirancang agar sangat intuitif. Berikut adalah cara memaksimalkan pengalaman Anda:
+
+* **🎨 Menggambar Objek:**
+    * Di bagian "Mode Gambar", pilih jenis primitif (Titik, Garis, Segitiga, Elips, Persegi).
+    * **Klik kiri** pada jendela PyOpenGL untuk menggambar. (Perhatikan: Garis, Segitiga, Elips, dan Persegi memerlukan beberapa klik untuk didefinisikan.)
+* **🌈 Mengubah Warna & Ketebalan:**
+    * Gunakan slider dan pemilih warna di "Pengaturan Gambar Global".
+    * Klik "Perbarui Pengaturan". Perubahan ini akan memengaruhi **objek yang sedang terpilih**, atau objek **baru** jika tidak ada yang terpilih.
+* **👆 Memilih Objek:**
+    * Pilih mode `Seleksi/Nonaktif` dari bagian "Mode Gambar".
+    * **Klik kiri** pada objek di jendela PyOpenGL. Objek yang terpilih akan disorot dengan **highlight kuning** yang jelas.
+* **✨ Transformasi (Objek Terpilih):**
+    * Setelah memilih objek, gunakan slider di bagian "Transformasi Objek" untuk **Translasi**, **Rotasi**, dan **Skala**.
+    * Klik "Terapkan Translasi/Rotasi/Skala" setelah menyesuaikan slider.
+    * **Reset Transformasi:** Klik tombol `Reset Transformasi` untuk mengembalikan objek yang terpilih ke posisi, rotasi, dan ukuran aslinya.
+* **✂️ Kontrol Clipping:**
+    * **Atur Jendela Clipping:** Klik tombol `Atur Jendela Clipping`. Kemudian, **klik dua titik** di jendela PyOpenGL untuk mendefinisikan area jendela clipping.
+    * **Aktifkan/Nonaktifkan:** Gunakan tombol `Aktifkan Clipping` atau `Nonaktifkan Clipping` untuk melihat efek pemotongan pada objek yang melewati batas jendela.
+    * **Geser Jendela:** Pastikan clipping aktif dan Anda dalam mode `Seleksi/Nonaktif`. Kemudian, **klik dan seret (drag-and-drop)** mouse di dalam jendela clipping di jendela PyOpenGL untuk memindahkannya.
+* **🗑️ Hapus Semua:** Klik tombol `Hapus Semua Objek` untuk membersihkan semua objek dari kanvas.
+
+## 📈 Potensi Pengembangan Lanjutan
+
+Proyek ini adalah fondasi yang kokoh untuk eksplorasi lebih lanjut di bidang grafika komputer. Beberapa ide untuk penyempurnaan dan fitur tambahan meliputi:
+
+* **UI/UX:**
+    * Feedback visual yang lebih kaya di panel web (misal, menampilkan properti objek yang sedang dipilih).
+    * Menampilkan mode gambar aktif secara lebih jelas di jendela PyOpenGL (selain highlight tombol).
+    * Fungsionalitas "undo/redo" untuk operasi gambar dan transformasi.
+* **Grafika:**
+    * Implementasi alternatif algoritma clipping (misal, Liang-Barsky) dan perbandingannya.
+    * Rotasi dan skala objek di sekitar *pusat objeknya sendiri* untuk interaksi yang lebih alami dan akurat.
+    * Dukungan untuk kurva Bézier atau Spline.
+    * Pengembangan menjadi grafika 3D yang lebih kompleks.
+* **Interaksi:**
+    * Peningkatan akurasi pemilihan objek dengan metode canggih (misal, Color Picking atau Selection Buffer OpenGL).
+    * Shortcut keyboard tambahan untuk semua fungsi.
+    * Fitur "mengubah ukuran" jendela clipping dengan *drag* dari sisi/sudutnya.
 
-Koneksi internet (untuk mengunduh dependensi awal)
 
-Browser Web modern (Chrome, Firefox, Edge, dll.)
-
-Panduan Instalasi
-Ikuti langkah-langkah di bawah ini untuk menyiapkan dan menjalankan proyek di lingkungan lokal Anda:
-
-Unduh atau Kloning Repositori:
-
-Bash
-
-git clone [URL_REPO_ANDA] # Jika ini dari GitHub/GitLab
-cd my_graphics_project
-Atau, jika Anda hanya memiliki file-file, pastikan struktur folder my_graphics_project/main.py dan my_graphics_project/static/ sudah benar.
-
-Instal Dependensi Python:
-Buka Terminal atau Command Prompt (di Windows, pastikan python dan pip dikenali. Jika tidak, tambahkan Python ke PATH lingkungan sistem Anda atau gunakan py -m pip).
-
-Navigasikan ke direktori proyek Anda (my_graphics_project):
-
-Bash
-
-cd path/to/my_graphics_project
-Jalankan perintah instalasi dependensi:
-
-Bash
-
-pip install pygame PyOpenGL PyOpenGL_accelerate Flask Flask-Cors
-(Jika pip tidak dikenali, coba python -m pip install ... atau py -m pip install ...)
-
-Cara Menjalankan Program
-Setelah instalasi selesai, ikuti langkah-langkah ini untuk menjalankan aplikasi:
-
-Buka Terminal/Command Prompt:
-
-Pastikan Anda berada di direktori proyek my_graphics_project.
-
-Jalankan Aplikasi Python:
-
-Bash
-
-python main.py
-Aplikasi ini akan memulai dua komponen: jendela aplikasi grafis PyOpenGL (aplikasi desktop) dan server web Flask (backend).
-
-Jendela grafis PyOpenGL akan muncul di desktop Anda.
-
-Di terminal, Anda akan melihat pesan log yang mengindikasikan bahwa server telah dimulai, termasuk alamat URL untuk panel kontrol web:
-
-INFO - Aplikasi PyOpenGL siap. Silakan buka panel kontrol web Anda di browser.
-INFO - Panel Kontrol Web dapat diakses di: http://127.0.0.1:5000/
-Penting: Biarkan terminal ini tetap terbuka selama Anda menggunakan aplikasi.
-
-Akses Panel Kontrol Web:
-
-Buka browser web favorit Anda.
-
-Di bilah alamat (URL bar), ketik alamat yang Anda lihat di log terminal (biasanya http://127.0.0.1:5000/).
-
-Tekan Enter.
-
-Sekarang Anda siap untuk berinteraksi dengan aplikasi grafis Anda!
-
-Panduan Penggunaan
-Panel kontrol web dirancang agar intuitif. Berikut adalah cara menggunakannya:
-
-Mode Gambar:
-
-Pilih mode Gambar Titik, Garis, Segitiga, Elips, atau Persegi dari bagian "Mode Gambar".
-
-Klik kiri pada jendela PyOpenGL untuk menggambar. Beberapa objek (garis, segitiga, elips, persegi) memerlukan beberapa klik untuk didefinisikan.
-
-Perhatikan bahwa tombol mode yang aktif akan memiliki highlight visual.
-
-Pengaturan Gambar Global:
-
-Gunakan slider Ketebalan Garis/Ukuran Titik dan pemilih Warna Gambar untuk mengatur properti objek yang akan digambar.
-
-Klik "Perbarui Pengaturan" untuk menerapkan perubahan.
-
-Catatan: Jika ada objek yang terpilih, perubahan warna/ketebalan akan diterapkan pada objek terpilih tersebut. Jika tidak ada objek terpilih, perubahan akan menjadi pengaturan default untuk objek yang baru digambar.
-
-Transformasi Objek:
-
-Pilih Objek: Aktifkan mode Seleksi/Nonaktif (tombol paling kanan di bagian "Mode Gambar"). Kemudian, klik kiri pada objek di jendela PyOpenGL. Objek yang terpilih akan ditandai dengan highlight kuning.
-
-Gunakan slider Translasi X/Y, Rotasi, dan Skala X/Y untuk memanipulasi objek yang terpilih.
-
-Klik "Terapkan Translasi/Rotasi/Skala" setelah menyesuaikan slider.
-
-Reset Transformasi: Klik tombol "Reset Transformasi" untuk mengembalikan objek yang terpilih ke posisi, rotasi, dan ukuran aslinya.
-
-Windowing & Clipping:
-
-Atur Jendela Clipping: Klik "Atur Jendela Clipping (2 Klik)". Kemudian, klik dua titik di jendela PyOpenGL untuk mendefinisikan area jendela clipping.
-
-Aktifkan/Nonaktifkan Clipping: Gunakan tombol "Aktifkan Clipping" dan "Nonaktifkan Clipping" untuk melihat efek pemotongan pada objek yang melewati batas jendela.
-
-Geser Jendela Clipping: Pastikan clipping aktif dan Anda dalam mode Seleksi/Nonaktif. Kemudian, klik dan seret (drag-and-drop) mouse di dalam jendela clipping di jendela PyOpenGL untuk memindahkannya.
-
-Umum:
-
-Hapus Semua Objek: Klik tombol "Hapus Semua Objek" untuk membersihkan semua objek dari kanvas.
-
-Penyempurnaan Lanjutan (Potensi Pengembangan)
-Proyek ini telah mengimplementasikan fitur-fitur inti. Namun, ada banyak ruang untuk penyempurnaan dan fitur tambahan:
-
-UI/UX:
-
-Feedback visual di panel web saat objek terpilih (misalnya, menampilkan properti objek terpilih).
-
-Indikator visual di jendela OpenGL saat mode gambar aktif (selain highlight tombol).
-
-Fungsionalitas "undo/redo" untuk operasi gambar dan transformasi.
-
-Grafika:
-
-Clipping elips terisi (memerlukan algoritma yang lebih canggih dari clipping poligon).
-
-Rotasi dan skala objek di sekitar pusat objeknya sendiri, bukan origin global.
-
-Implementasi algoritma clipping Liang-Barsky sebagai alternatif Cohen-Sutherland.
-
-Tambahan objek 2D lainnya (misalnya, poligon umum dengan N sisi).
-
-Fungsionalitas "undo/redo" untuk operasi gambar dan transformasi.
-
-Fitur "mengubah ukuran" window clipping dengan drag dari sisi/sudutnya.
-
-Interaksi:
-
-Peningkatan akurasi picking objek (misalnya, menggunakan color-picking atau selection buffer OpenGL).
-
-Shortcut keyboard untuk mode gambar dan transformasi.
-
-Kontribusi
-Kontribusi untuk proyek ini sangat disambut baik! Jika Anda memiliki ide atau perbaikan, silakan:
-
-Fork repositori ini.
-
-Buat branch baru (git checkout -b feature/nama-fitur-baru).
-
-Lakukan perubahan dan commit (git commit -m 'Tambahkan fitur baru').
-
-Push ke branch Anda (git push origin feature/nama-fitur-baru).
-
-Buat Pull Request.
-
-Lisensi
-Proyek ini dilisensikan di bawah Lisensi MIT. Anda bebas menggunakan, memodifikasi, dan mendistribusikan kode ini untuk tujuan pribadi atau komersial.
