@@ -87,9 +87,9 @@ Organisasi kode yang bersih dan modular untuk navigasi yang mudah:
 my\_graphics\_project/
 ├── main.py                 \# Logika inti aplikasi (PyOpenGL + Flask backend)
 └── static/                 \# Folder untuk aset web statis (HTML, CSS, JS)
-├── index.html          \# Halaman utama panel kontrol web
-├── style.css           \# Styling khusus untuk panel kontrol
-└── script.js           \# Logika interaktif sisi klien untuk panel kontrol
+   ├── index.html          \# Halaman utama panel kontrol web
+   ├── style.css           \# Styling khusus untuk panel kontrol
+   └── script.js           \# Logika interaktif sisi klien untuk panel kontrol
 
 ````
 
