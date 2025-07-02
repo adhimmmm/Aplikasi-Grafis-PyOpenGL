@@ -1,51 +1,55 @@
-#  Proyek Grafika Komputer Interaktif: PyOpenGL & Web Control Panel 2D 
+
+# Proyek Grafika Komputer Interaktif: PyOpenGL & Web Control Panel 2D
 
 [![Python Version](https://img.shields.io/badge/Python-3.x%2B-blue.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![Framework](https://img.shields.io/badge/Framework-Flask-green.svg?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
 [![Graphics API](https://img.shields.io/badge/Graphics%20API-PyOpenGL-orange.svg?style=for-the-badge&logo=opengl&logoColor=white)](http://pyopengl.sourceforge.net/)
 [![UI/UX](https://img.shields.io/badge/UI%2FUX-HTML%2FCSS%2FJS-red.svg?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-
-
----
-
-Selamat datang di Proyek Grafika Komputer Interaktif! Aplikasi inovatif ini membawa konsep-konsep grafika 2D ke level selanjutnya dengan kombinasi PyOpenGL yang kuat dan panel kontrol berbasis web yang *cantik* serta intuitif. Dibuat khusus untuk memenuhi persyaratan tugas besar mata kuliah Grafika Komputer, proyek ini adalah bukti nyata sinergi antara aplikasi desktop grafis berkinerja tinggi dan antarmuka pengguna web modern. 🚀
-
-## 📖 Daftar Isi
-
-* [🌟 Gambaran Umum Proyek](#-gambaran-umum-proyek)
-* [🚀 Fitur Unggulan](#-fitur-unggulan)
-* [🛠️ Teknologi yang Digunakan](#-teknologi-yang-digunakan)
-* [📂 Struktur Proyek](#-struktur-proyek)
-* [🖥️ Persyaratan Sistem](#-persyaratan-sistem)
-* [⬇️ Panduan Instalasi](#-panduan-instalasi)
-* [▶️ Cara Menjalankan Program](#-cara-menjalankan-program)
-* [💡 Panduan Penggunaan](#-panduan-penggunaan)
-* [📈 Potensi Pengembangan Lanjutan](#-potensi-pengembangan-lanjutan)
+[![License](https://img.shields.io/badge/License-MIT-lightgrey.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 ---
 
-## 🌟 Gambaran Umum Proyek
+Selamat datang di Proyek Grafika Komputer Interaktif! Aplikasi inovatif ini membawa konsep-konsep grafika 2D ke level selanjutnya dengan kombinasi PyOpenGL yang kuat dan panel kontrol berbasis web yang cantik serta intuitif. Dibuat khusus untuk memenuhi persyaratan tugas besar mata kuliah Grafika Komputer, proyek ini adalah bukti nyata sinergi antara aplikasi desktop grafis berkinerja tinggi dan antarmuka pengguna web modern.
+
+## Daftar Isi
+
+* [Gambaran Umum Proyek](#gambaran-umum-proyek)
+* [Fitur Unggulan](#fitur-unggulan)
+* [Teknologi yang Digunakan](#teknologi-yang-digunakan)
+* [Struktur Proyek](#struktur-proyek)
+* [Persyaratan Sistem](#persyaratan-sistem)
+* [Panduan Instalasi](#panduan-instalasi)
+* [Cara Menjalankan Program](#cara-menjalankan-program)
+* [Panduan Penggunaan](#panduan-penggunaan)
+* [Potensi Pengembangan Lanjutan](#potensi-pengembangan-lanjutan)
+* [Kontribusi](#kontribusi)
+* [Lisensi](#lisensi)
+* [Kontak](#kontak)
+
+---
+
+## Gambaran Umum Proyek
 
 Proyek ini mendefinisikan ulang interaksi dalam aplikasi grafika komputer. Alih-alih antarmuka tradisional, kami memisahkan rendering grafis berkinerja tinggi (dihandle oleh PyOpenGL sebagai aplikasi desktop native) dari pengalaman pengguna (disajikan melalui panel kontrol berbasis web yang ramah pengguna). Komunikasi real-time antara kedua dunia ini diwujudkan melalui server Python Flask yang efisien dan komunikasi socket yang cepat.
 
-Pendekatan arsitektur *hybrid* ini tidak hanya memenuhi standar akademis tetapi juga membuka pintu bagi pengalaman pengguna yang lebih fleksibel, modern, dan demonstrasi konsep grafika yang lebih interaktif. 🌐
+Pendekatan arsitektur *hybrid* ini tidak hanya memenuhi standar akademis tetapi juga membuka pintu bagi pengalaman pengguna yang lebih fleksibel, modern, dan demonstrasi konsep grafika yang lebih interaktif.
 
-## 🚀 Fitur Unggulan
+## Fitur Unggulan
 
-### 🎨 A. Objek 2D Dasar & Pengaturan Visual
+### A. Objek 2D Dasar & Pengaturan Visual
 
-* **Menggambar Primitif:** Buat Titik, Garis, Segitiga, **Elips**, dan **Persegi** dengan mudah melalui klik mouse langsung di jendela grafis.
+* **Menggambar Primitif:** Buat Titik, Garis, Segitiga, Elips, dan Persegi dengan mudah melalui klik mouse langsung di jendela grafis.
 * **Kustomisasi Visual:** Atur **Warna** objek (RGB) dan **Ketebalan Garis** (atau ukuran titik) menggunakan slider dan pemilih warna yang responsif di panel web. Perubahan dapat diterapkan pada objek baru atau objek yang sedang terpilih!
 * **Input Mouse:** Semua operasi gambar dan interaksi dikendalikan secara intuitif melalui klik mouse.
 
-### 🔄 B. Transformasi Geometris Interaktif
+### B. Transformasi Geometris Interaktif
 
 * **Translasi (Pergeseran):** Pindahkan objek terpilih di sepanjang sumbu X dan Y menggunakan slider di panel web.
 * **Rotasi:** Putar objek terpilih menggunakan slider sudut rotasi.
 * **Skala (Perubahan Ukuran):** Sesuaikan ukuran objek terpilih secara independen di sumbu X dan Y menggunakan slider skala.
 * **Reset Cepat:** Satu tombol untuk mengembalikan semua transformasi objek yang terpilih ke kondisi awalnya (posisi asli, rotasi 0, skala 100%).
 
-### ✂️ C. Windowing & Clipping Canggih
+### C. Windowing & Clipping Canggih
 
 * **Definisi Jendela Clipping:** Tentukan area tampilan aktif dengan dua klik mouse di jendela OpenGL. Batas jendela terlihat jelas dengan *outline* cyan.
 * **Algoritma Cerdas:**
@@ -54,15 +58,16 @@ Pendekatan arsitektur *hybrid* ini tidak hanya memenuhi standar akademis tetapi 
 * **Kontrol Toggle:** Aktifkan atau nonaktifkan fitur clipping dengan mudah dari panel web.
 * **Geser Jendela Clipping:** Pindahkan jendela clipping secara halus dengan *drag-and-drop* mouse, memberikan kontrol dinamis atas area pandang.
 
-### 🔗 D. Integrasi & Interaktivitas Seamless
+### D. Integrasi & Interaktivitas Seamless
 
 * **Pemilihan Objek Intuitif:** Klik objek di jendela grafis (dalam mode seleksi) untuk memilihnya. Objek yang terpilih akan ditandai dengan **highlight kuning** yang jelas.
 * **Panel Kontrol Web Modern:** Antarmuka pengguna yang *user-friendly* dan responsif, dirancang dengan HTML, CSS, dan JavaScript, memungkinkan Anda mengendalikan semua fitur dengan mudah dari browser Anda.
 * **Komunikasi Real-time:** Berkat arsitektur Flask dan socket, setiap penyesuaian di panel web langsung tercermin di jendela grafis PyOpenGL Anda, menciptakan pengalaman yang *live* dan interaktif.
+* **Penghapusan Objek Individual:** Hapus objek yang sedang terpilih dengan mudah melalui tombol di panel kontrol web.
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
+## Teknologi yang Digunakan
 
 * **Python 3.x:** Tulang punggung proyek.
     * `PyOpenGL`: Jembatan ke dunia grafika OpenGL.
@@ -73,24 +78,22 @@ Pendekatan arsitektur *hybrid* ini tidak hanya memenuhi standar akademis tetapi 
 * **CSS3:** Styling modern untuk panel kontrol web yang estetis.
 * **JavaScript:** Memberikan interaktivitas dinamis di sisi klien (browser).
 
-## 📂 Struktur Proyek
+## Struktur Proyek
 
 Organisasi kode yang bersih dan modular untuk navigasi yang mudah:
 
-my_graphics_project/
+```
 
-├── main.py                 # 🐍 Logika inti aplikasi (PyOpenGL + Flask backend)
+my\_graphics\_project/
+├── main.py                 \# Logika inti aplikasi (PyOpenGL + Flask backend)
+└── static/                 \# Folder untuk aset web statis (HTML, CSS, JS)
+├── index.html          \# Halaman utama panel kontrol web
+├── style.css           \# Styling khusus untuk panel kontrol
+└── script.js           \# Logika interaktif sisi klien untuk panel kontrol
 
-└── static/                 # 🌐 Folder untuk aset web statis (HTML, CSS, JS)
+````
 
-  > ├── index.html          # Halaman utama panel kontrol web
- 
-  > ├── style.css           # Styling khusus untuk panel kontrol
- 
-  > └── script.js           # Logika interaktif sisi klien untuk panel kontrol
-
-
-## 🖥️ Persyaratan Sistem
+## Persyaratan Sistem
 
 Untuk menjalankan aplikasi ini dengan lancar, pastikan Anda memiliki:
 
@@ -99,7 +102,7 @@ Untuk menjalankan aplikasi ini dengan lancar, pastikan Anda memiliki:
 * **Koneksi Internet:** Diperlukan untuk mengunduh dependensi awal.
 * **Browser Web Modern:** Google Chrome, Mozilla Firefox, Microsoft Edge, dll., untuk mengakses panel kontrol.
 
-## ⬇️ Panduan Instalasi
+## Panduan Instalasi
 
 Ikuti langkah-langkah mudah ini untuk menyiapkan dan menjalankan proyek di lingkungan lokal Anda:
 
@@ -123,7 +126,7 @@ Ikuti langkah-langkah mudah ini untuk menyiapkan dan menjalankan proyek di lingk
     ```
     *(Jika `pip` tidak dikenali, coba `python -m pip install ...` atau `py -m pip install ...`)*
 
-## ▶️ Cara Menjalankan Program
+## Cara Menjalankan Program
 
 Setelah instalasi selesai, meluncurkan aplikasi sangat sederhana:
 
@@ -150,32 +153,34 @@ Setelah instalasi selesai, meluncurkan aplikasi sangat sederhana:
     * Di bilah alamat (URL bar), ketik alamat yang Anda lihat di log terminal (misalnya: `http://127.0.0.1:5000/`).
     * Tekan `Enter`.
 
-Selamat! Anda kini siap untuk *berinteraksi* dengan grafika 2D Anda secara dinamis! 🎉
+Selamat! Anda kini siap untuk *berinteraksi* dengan grafika 2D Anda secara dinamis!
 
-## 💡 Panduan Penggunaan
+## Panduan Penggunaan
 
 Panel kontrol web dirancang agar sangat intuitif. Berikut adalah cara memaksimalkan pengalaman Anda:
 
-* ** Menggambar Objek:**
+* **Menggambar Objek:**
     * Di bagian "Mode Gambar", pilih jenis primitif (Titik, Garis, Segitiga, Elips, Persegi).
     * **Klik kiri** pada jendela PyOpenGL untuk menggambar. (Perhatikan: Garis, Segitiga, Elips, dan Persegi memerlukan beberapa klik untuk didefinisikan.)
-* ** Mengubah Warna & Ketebalan:**
+* **Mengubah Warna & Ketebalan:**
     * Gunakan slider dan pemilih warna di "Pengaturan Gambar Global".
     * Klik "Perbarui Pengaturan". Perubahan ini akan memengaruhi **objek yang sedang terpilih**, atau objek **baru** jika tidak ada yang terpilih.
-* ** Memilih Objek:**
+* **Memilih Objek:**
     * Pilih mode `Seleksi/Nonaktif` dari bagian "Mode Gambar".
     * **Klik kiri** pada objek di jendela PyOpenGL. Objek yang terpilih akan disorot dengan **highlight kuning** yang jelas.
-* ** Transformasi (Objek Terpilih):**
+* **Transformasi (Objek Terpilih):**
     * Setelah memilih objek, gunakan slider di bagian "Transformasi Objek" untuk **Translasi**, **Rotasi**, dan **Skala**.
     * Klik "Terapkan Translasi/Rotasi/Skala" setelah menyesuaikan slider.
     * **Reset Transformasi:** Klik tombol `Reset Transformasi` untuk mengembalikan objek yang terpilih ke posisi, rotasi, dan ukuran aslinya.
-* ** Kontrol Clipping:**
+* **Kontrol Clipping:**
     * **Atur Jendela Clipping:** Klik tombol `Atur Jendela Clipping`. Kemudian, **klik dua titik** di jendela PyOpenGL untuk mendefinisikan area jendela clipping.
     * **Aktifkan/Nonaktifkan:** Gunakan tombol `Aktifkan Clipping` atau `Nonaktifkan Clipping` untuk melihat efek pemotongan pada objek yang melewati batas jendela.
     * **Geser Jendela:** Pastikan clipping aktif dan Anda dalam mode `Seleksi/Nonaktif`. Kemudian, **klik dan seret (drag-and-drop)** mouse di dalam jendela clipping di jendela PyOpenGL untuk memindahkannya.
-* ** Hapus Semua:** Klik tombol `Hapus Semua Objek` untuk membersihkan semua objek dari kanvas.
+* **Menghapus Objek:**
+    * **Hapus Objek Terpilih:** Pastikan Anda telah memilih objek (ditandai kuning). Kemudian, klik tombol `Hapus Objek Terpilih` di panel kontrol web.
+    * **Hapus Semua Objek:** Klik tombol `Hapus Semua Objek` untuk membersihkan seluruh kanvas.
 
-## 📈 Potensi Pengembangan Lanjutan
+## Potensi Pengembangan Lanjutan
 
 Proyek ini adalah fondasi yang kokoh untuk eksplorasi lebih lanjut di bidang grafika komputer. Beberapa ide untuk penyempurnaan dan fitur tambahan meliputi:
 
@@ -193,4 +198,25 @@ Proyek ini adalah fondasi yang kokoh untuk eksplorasi lebih lanjut di bidang gra
     * Shortcut keyboard tambahan untuk semua fungsi.
     * Fitur "mengubah ukuran" jendela clipping dengan *drag* dari sisi/sudutnya.
 
+## Kontribusi
 
+Kontribusi dan ide-ide untuk membuat proyek ini lebih baik sangat kami sambut! Jika Anda tertarik untuk berpartisipasi, silakan ikuti langkah-langkah berikut:
+
+1.  *Fork* repositori ini.
+2.  Buat branch baru untuk fitur Anda (`git checkout -b feature/nama-fitur-baru`).
+3.  Lakukan perubahan dan commit (`git commit -m 'feat: Tambahkan fitur baru XYZ'`).
+4.  *Push* ke branch Anda (`git push origin feature/nama-fitur-baru`).
+5.  Buat Pull Request.
+
+## Lisensi
+
+Proyek ini dilisensikan di bawah [Lisensi MIT](https://opensource.org/licenses/MIT). Anda bebas menggunakan, memodifikasi, dan mendistribusikan kode ini untuk tujuan pribadi atau komersial.
+
+## Kontak
+
+Jangan ragu untuk menghubungi jika Anda memiliki pertanyaan, saran, atau ingin berdiskusi lebih lanjut tentang proyek ini:
+
+[**Nama Lengkap Anda**]
+[**Email Anda**](mailto:your.email@example.com)
+[**Profil LinkedIn Anda (Opsional)**](https://linkedin.com/in/nama-anda)
+[**Profil GitHub Anda (Opsional)**](https://github.com/USERNAME_ANDA)
