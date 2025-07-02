@@ -4,7 +4,7 @@
 [![Framework](https://img.shields.io/badge/Framework-Flask-green.svg?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
 [![Graphics API](https://img.shields.io/badge/Graphics%20API-PyOpenGL-orange.svg?style=for-the-badge&logo=opengl&logoColor=white)](http://pyopengl.sourceforge.net/)
 [![UI/UX](https://img.shields.io/badge/UI%2FUX-HTML%2FCSS%2FJS-red.svg?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![License](https://img.shields.io/badge/License-MIT-lightgrey.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
 
 ---
 
