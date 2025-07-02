@@ -1,4 +1,4 @@
-# ✨ Proyek Grafika Komputer Interaktif: PyOpenGL & Web Control Panel ✨
+# ✨ Proyek Grafika Komputer Interaktif: PyOpenGL & Web Control Panel 2D ✨
 
 [![Python Version](https://img.shields.io/badge/Python-3.x%2B-blue.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![Framework](https://img.shields.io/badge/Framework-Flask-green.svg?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
