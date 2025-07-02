@@ -156,24 +156,24 @@ Selamat! Anda kini siap untuk *berinteraksi* dengan grafika 2D Anda secara dinam
 
 Panel kontrol web dirancang agar sangat intuitif. Berikut adalah cara memaksimalkan pengalaman Anda:
 
-* **🎨 Menggambar Objek:**
+* ** Menggambar Objek:**
     * Di bagian "Mode Gambar", pilih jenis primitif (Titik, Garis, Segitiga, Elips, Persegi).
     * **Klik kiri** pada jendela PyOpenGL untuk menggambar. (Perhatikan: Garis, Segitiga, Elips, dan Persegi memerlukan beberapa klik untuk didefinisikan.)
-* **🌈 Mengubah Warna & Ketebalan:**
+* ** Mengubah Warna & Ketebalan:**
     * Gunakan slider dan pemilih warna di "Pengaturan Gambar Global".
     * Klik "Perbarui Pengaturan". Perubahan ini akan memengaruhi **objek yang sedang terpilih**, atau objek **baru** jika tidak ada yang terpilih.
-* **👆 Memilih Objek:**
+* ** Memilih Objek:**
     * Pilih mode `Seleksi/Nonaktif` dari bagian "Mode Gambar".
     * **Klik kiri** pada objek di jendela PyOpenGL. Objek yang terpilih akan disorot dengan **highlight kuning** yang jelas.
-* **✨ Transformasi (Objek Terpilih):**
+* ** Transformasi (Objek Terpilih):**
     * Setelah memilih objek, gunakan slider di bagian "Transformasi Objek" untuk **Translasi**, **Rotasi**, dan **Skala**.
     * Klik "Terapkan Translasi/Rotasi/Skala" setelah menyesuaikan slider.
     * **Reset Transformasi:** Klik tombol `Reset Transformasi` untuk mengembalikan objek yang terpilih ke posisi, rotasi, dan ukuran aslinya.
-* **✂️ Kontrol Clipping:**
+* ** Kontrol Clipping:**
     * **Atur Jendela Clipping:** Klik tombol `Atur Jendela Clipping`. Kemudian, **klik dua titik** di jendela PyOpenGL untuk mendefinisikan area jendela clipping.
     * **Aktifkan/Nonaktifkan:** Gunakan tombol `Aktifkan Clipping` atau `Nonaktifkan Clipping` untuk melihat efek pemotongan pada objek yang melewati batas jendela.
     * **Geser Jendela:** Pastikan clipping aktif dan Anda dalam mode `Seleksi/Nonaktif`. Kemudian, **klik dan seret (drag-and-drop)** mouse di dalam jendela clipping di jendela PyOpenGL untuk memindahkannya.
-* **🗑️ Hapus Semua:** Klik tombol `Hapus Semua Objek` untuk membersihkan semua objek dari kanvas.
+* ** Hapus Semua:** Klik tombol `Hapus Semua Objek` untuk membersihkan semua objek dari kanvas.
 
 ## 📈 Potensi Pengembangan Lanjutan
 
