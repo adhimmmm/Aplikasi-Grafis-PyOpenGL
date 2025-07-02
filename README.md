@@ -5,7 +5,7 @@
 [![Framework](https://img.shields.io/badge/Framework-Flask-green.svg?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
 [![Graphics API](https://img.shields.io/badge/Graphics%20API-PyOpenGL-orange.svg?style=for-the-badge&logo=opengl&logoColor=white)](http://pyopengl.sourceforge.net/)
 [![UI/UX](https://img.shields.io/badge/UI%2FUX-HTML%2FCSS%2FJS-red.svg?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![License](https://img.shields.io/badge/License-MIT-lightgrey.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
 
 ---
 
@@ -22,9 +22,6 @@ Selamat datang di Proyek Grafika Komputer Interaktif! Aplikasi inovatif ini memb
 * [Cara Menjalankan Program](#cara-menjalankan-program)
 * [Panduan Penggunaan](#panduan-penggunaan)
 * [Potensi Pengembangan Lanjutan](#potensi-pengembangan-lanjutan)
-* [Kontribusi](#kontribusi)
-* [Lisensi](#lisensi)
-* [Kontak](#kontak)
 
 ---
 
@@ -198,25 +195,4 @@ Proyek ini adalah fondasi yang kokoh untuk eksplorasi lebih lanjut di bidang gra
     * Shortcut keyboard tambahan untuk semua fungsi.
     * Fitur "mengubah ukuran" jendela clipping dengan *drag* dari sisi/sudutnya.
 
-## Kontribusi
 
-Kontribusi dan ide-ide untuk membuat proyek ini lebih baik sangat kami sambut! Jika Anda tertarik untuk berpartisipasi, silakan ikuti langkah-langkah berikut:
-
-1.  *Fork* repositori ini.
-2.  Buat branch baru untuk fitur Anda (`git checkout -b feature/nama-fitur-baru`).
-3.  Lakukan perubahan dan commit (`git commit -m 'feat: Tambahkan fitur baru XYZ'`).
-4.  *Push* ke branch Anda (`git push origin feature/nama-fitur-baru`).
-5.  Buat Pull Request.
-
-## Lisensi
-
-Proyek ini dilisensikan di bawah [Lisensi MIT](https://opensource.org/licenses/MIT). Anda bebas menggunakan, memodifikasi, dan mendistribusikan kode ini untuk tujuan pribadi atau komersial.
-
-## Kontak
-
-Jangan ragu untuk menghubungi jika Anda memiliki pertanyaan, saran, atau ingin berdiskusi lebih lanjut tentang proyek ini:
-
-[**Nama Lengkap Anda**]
-[**Email Anda**](mailto:your.email@example.com)
-[**Profil LinkedIn Anda (Opsional)**](https://linkedin.com/in/nama-anda)
-[**Profil GitHub Anda (Opsional)**](https://github.com/USERNAME_ANDA)
