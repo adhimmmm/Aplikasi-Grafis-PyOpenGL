@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Kontrol Grafis PyOpenGL Interaktif</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Kontrol Aplikasi Grafis PyOpenGL</h1>
+        <p>Kelola dan interaksikan dengan aplikasi grafis desktop Anda secara real-time.</p>
+    </header>
+
+    <main class="container">
+        <section class="control-section">
+            <h2>Transformasi Objek</h2>
+            <div class="control-group">
+                <label for="translateX">Translasi X:</label>
+                <input type="range" id="translateX" min="-100" max="100" value="0">
+                <span id="translateXValue">0</span> </div>
+            <div class="control-group">
+                <label for="translateY">Translasi Y:</label>
+                <input type="range" id="translateY" min="-100" max="100" value="0">
+                <span id="translateYValue">0</span> </div>
+            <button class="action-button primary" id="applyTranslate">Terapkan Translasi</button>
+            
+            <hr class="separator"> <div class="control-group">
+                <label for="rotateAngle">Rotasi (Derajat):</label>
+                <input type="range" id="rotateAngle" min="-180" max="180" value="0">
+                <span id="rotateAngleValue">0</span>
+            </div>
+            <button class="action-button primary" id="applyRotate">Terapkan Rotasi</button>
+
+            <hr class="separator">
+
+            <div class="control-group">
+                <label for="scaleX">Skala X:</label>
+                <input type="range" id="scaleX" min="1" max="200" value="100">
+                <span id="scaleXValue">100%</span>
+            </div>
+            <div class="control-group">
+                <label for="scaleY">Skala Y:</label>
+                <input type="range" id="scaleY" min="1" max="200" value="100">
+                <span id="scaleYValue">100%</span>
+            </div>
+            <button class="action-button primary" id="applyScale">Terapkan Skala</button>
+
+            <hr class="separator"> <button class="action-button danger" id="resetTransform">Reset Transformasi</button>
+        </section>
+
+        <section class="control-section">
+            <h2>Mode Gambar</h2>
+            <div class="button-group">
+                <button class="action-button secondary" id="drawPointTool">Gambar Titik</button>
+                <button class="action-button secondary" id="drawLineTool">Gambar Garis</button>
+                <button class="action-button secondary" id="drawTriangleTool">Gambar Segitiga</button>
+                <button class="action-button secondary" id="drawEllipseTool">Gambar Elips</button>
+                <button class="action-button secondary" id="drawRectangleTool">Gambar Persegi</button> <button class="action-button secondary" id="selectNoneTool">Mode Seleksi/Nonaktif</button>
+            </div>
+            <p class="instruction">Klik di jendela PyOpenGL untuk menggambar (butuh beberapa klik untuk garis/segitiga/elips/persegi).<br>
+            <strong>Untuk memilih objek, aktifkan mode "Seleksi/Nonaktif" dan klik objek di jendela PyOpenGL.</strong></p>
+        </section>
+
+        <section class="control-section">
+            <h2>Pengaturan Gambar Global</h2>
+            <div class="control-group">
+                <label for="lineThickness">Ketebalan Garis/Ukuran Titik:</label>
+                <input type="range" id="lineThickness" min="1" max="10" value="1">
+                <span id="lineThicknessValue">1</span>
+            </div>
+            <div class="control-group">
+                <label for="drawColor">Warna Gambar:</label>
+                <input type="color" id="drawColor" value="#FF0000"> </div>
+            <button class="action-button secondary" id="applyDrawSettings">Perbarui Pengaturan</button>
+        </section>
+
+        <section class="control-section">
+            <h2>Windowing & Clipping</h2>
+            <div class="button-group">
+                <button class="action-button info" id="setClipWindow">Atur Jendela Clipping (2 Klik)</button>
+                <button class="action-button success" id="enableClipping">Aktifkan Clipping</button>
+                <button class="action-button danger" id="disableClipping">Nonaktifkan Clipping</button>
+            </div>
+            <p class="instruction">Setelah mengatur jendela, aktifkan/nonaktifkan clipping. <br>
+            Untuk menggeser window, aktifkan clipping dan mode seleksi, lalu seret window.</p>
+        </section>
+
+        <section class="control-section">
+            <h2>Umum</h2>
+            <button class="action-button danger" id="clearAllObjects">Hapus Semua Objek</button>
+        </section>
+
+        <section class="control-section status-section">
+            <h2>Status & Log</h2>
+            <div id="status-message" class="status-box">Menunggu perintah...</div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Proyek Grafika Komputer. Dibuat dengan PyOpenGL & Teknologi Web.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
